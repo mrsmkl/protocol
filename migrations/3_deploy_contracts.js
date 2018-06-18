@@ -32,12 +32,14 @@ module.exports = function(deployer, network) {
 
         let roundsManager
 
+            roundsManager = await lpDeployer.deployProxyAndRegister(RoundsManager, "RoundsManager", controller.address)
+/*
         if (!lpDeployer.isLiveNetwork(network)) {
             // Only deploy the adjustable rounds manager contract if we are in an isolated testing environment and not a live network
             roundsManager = await lpDeployer.deployProxyAndRegister(AdjustableRoundsManager, "RoundsManager", controller.address)
         } else {
             roundsManager = await lpDeployer.deployProxyAndRegister(RoundsManager, "RoundsManager", controller.address)
-        }
+        } */
 
         await lpDeployer.deployProxyAndRegister(ServiceRegistry, "ServiceRegistry", controller.address)
 

@@ -10,7 +10,7 @@ module.exports = {
         maxEarningsClaimsRounds: 20
     },
     jobsManager: {
-        verificationRate: 1000,
+        verificationRate: 3,
         verificationPeriod: 100,
         verificationSlashingPeriod: 100,
         failedVerificationSlashAmount: 1,
@@ -19,8 +19,8 @@ module.exports = {
         finderFee: 50000
     },
     roundsManager: {
-        roundLength: 5760,
-        roundLockAmount: 100000
+        roundLength: 300,
+        roundLockAmount: 0
     },
     faucet: {
         requestAmount: new BigNumber(10).mul(TOKEN_UNIT),
@@ -36,6 +36,6 @@ module.exports = {
         verificationCodeHash: "QmUMk1wF6YmFLFyydhSVgeNCSKk4J8G38DzTzcx6FdYSzV",
         solver: "0xc613674f1876eeb89821bcaa9CfC5B9299BACBF2",
         gasPrice: 20000000000,
-        gasLimit: 3000000
+        gasLimit: 6000000
     }
 }

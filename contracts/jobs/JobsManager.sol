@@ -360,8 +360,9 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 challengeBlock = claim.claimBlock + 1;
         // Segment must be eligible for verification
         // roundsManager().blockHash() ensures that the challenge block is within the last 256 blocks from the current block
-        require(JobLib.shouldVerifySegment(_segmentNumber, claim.segmentRange, challengeBlock, roundsManager().blockHash(challengeBlock), verificationRate));
+        // require(JobLib.shouldVerifySegment(_segmentNumber, claim.segmentRange, challengeBlock, roundsManager().blockHash(challengeBlock), verificationRate));
         // Segment must be signed by broadcaster
+        /*
         require(
             JobLib.validateBroadcasterSig(
                 job.streamId,
@@ -383,6 +384,8 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
                 claim.claimRoot
            )
         );
+        
+        */
 
         // Mark segment as submitted for verification
         claim.segmentVerifications[_segmentNumber] = true;
